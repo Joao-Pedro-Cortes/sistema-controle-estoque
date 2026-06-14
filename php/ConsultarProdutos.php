@@ -1,6 +1,11 @@
 <?php
 require_once("ControleEntrada.php");
 require_once("linkagemdb.php");
+
+if(isset($_SESSION['msg'])){
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,19 +30,20 @@ require_once("linkagemdb.php");
         </tr>
 
         <?php
-            $sql = "SELECT codigo_produto, nome_produto, descricao, preco, quantidade, data_entrada 
-                    FROM produtos 
-                    WHERE ativo = 1";
-
+            $sql = "SELECT codigo_produto, nome_produto, descricao, preco, quantidade, data_entrada, id_produto FROM produtos WHERE ativo = 1";
             $stmt = mysqli_stmt_init($con);
             mysqli_stmt_prepare($stmt, $sql);
             mysqli_stmt_execute($stmt);
-            mysqli_stmt_bind_result($stmt, $codigo, $nome, $descricao, $preco, $quantidade, $data_entrada);
+            mysqli_stmt_bind_result($stmt, $codigo, $nome, $descricao, $preco, $quantidade, $data_entrada, $id_produto);
 
             while(mysqli_stmt_fetch($stmt)){
                 $data_br = date("d/m/Y H:i:s", strtotime($data_entrada));
                 $preco_br = number_format($preco, 2, ",", ".");
-                echo "
+                $acoes = "<a href='EditarProduto.php?id=$id_produto'>Editar</a>";
+                if($_SESSION['level'] == 0){
+                    $acoes .= " | <a href='DesativarProduto.php?id=$id_produto'>Desativar</a>";
+                }
+                echo"
                     <tr>
                         <td>$codigo</td>
                         <td>$nome</td>
@@ -45,6 +51,7 @@ require_once("linkagemdb.php");
                         <td>R$ $preco_br</td>
                         <td>$quantidade</td>
                         <td>$data_br</td>
+                        <td>$acoes</td>
                     </tr>
                 ";
             }

@@ -177,3 +177,14 @@ João Pedro Cortes da Silva Sedenho
     <li>Formatação de data para o padrão brasileiro</li>
     <li>Integração do módulo de produtos ao menu principal do sistema</li>
 </ul>
+
+<h3>v1.3</h3>
+
+<ul>
+    <li>Implementação da edição de produtos</li>
+    <li>Criação da área de produtos desativados</li>
+    <li>Possibilidade de desativar produtos sem removê-los do banco de dados</li>
+    <li>Possibilidade de reativar produtos desativados</li>
+    <li>Melhoria na consulta de produtos</li>
+    <li>Proteção da quantidade de estoque contra alterações manuais</li>
+</ul>

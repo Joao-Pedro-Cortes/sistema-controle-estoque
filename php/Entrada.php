@@ -8,6 +8,7 @@
             echo "<hr>";
             echo "<a href='gerenciamentousuario.php'>Gerenciar Usuários</a></p>";
             echo "<a href='CadastrarProdutos.php'>Cadastrar Produtos</a></p>";
+            echo "<p><a href='ProdutosDesativados.php'>Produtos Desativados</a></p>";
             break;
 
         case 1:
