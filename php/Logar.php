@@ -7,7 +7,7 @@
         <title>Document</title>
     </head>
     <body>
-        <form action="" method="post">
+        <form action="VerificarLogin.php" method="post">
             <p>Usuário: <input type="text" name="txtusuario"></p>
             <p>Senha:   <input type="password" name="pwsenha"></p>
             <p><input type="submit" name="btn" value="Entrar"></p>
