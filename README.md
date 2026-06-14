@@ -1,11 +1,11 @@
 <h1>Sistema de Controle de Estoque</h1>
 
 <p>
-Este projeto foi desenvolvido com o objetivo de praticar PHP, MySQL e conceitos de desenvolvimento web.
+A ideia principal deste projeto é desenvolver um sistema de controle de estoque utilizando PHP e MySQL. O projeto começou com a implementação do sistema de login, usuários e níveis de acesso e, aos poucos, vem recebendo novas funcionalidades relacionadas ao gerenciamento de estoque.
 </p>
 
 <p>
-A ideia é criar um sistema de controle de estoque de forma gradual, começando pela autenticação de usuários e controle de acesso, e adicionando novas funcionalidades conforme avanço nos estudos e ganho mais experiência com a linguagem.
+Durante o desenvolvimento, busco aplicar boas práticas de organização de código, separando arquivos por responsabilidade e mantendo a estrutura do projeto simples para facilitar futuras melhorias e manutenções.
 </p>
 
 <hr>
@@ -18,21 +18,25 @@ A ideia é criar um sistema de controle de estoque de forma gradual, começando 
     <li>HTML</li>
     <li>XAMPP</li>
     <li>phpMyAdmin</li>
+    <li>Git</li>
+    <li>GitHub</li>
 </ul>
 
 <hr>
 
-<h2>Funcionalidades atuais</h2>
+<h2>O que o sistema já faz</h2>
 
 <ul>
-    <li>Conexão com banco de dados</li>
-    <li>Sistema de login</li>
-    <li>Controle de sessões</li>
-    <li>Controle de níveis de acesso</li>
-    <li>Cadastro de usuários</li>
-    <li>Criptografia de senhas</li>
-    <li>Encerramento de sessão (logoff)</li>
-    <li>Gerenciamento de usuários</li>
+    <li>Conecta com o banco de dados</li>
+    <li>Possui tela de login</li>
+    <li>Trabalha com sessões</li>
+    <li>Controla níveis de acesso</li>
+    <li>Permite cadastrar usuários</li>
+    <li>Criptografa as senhas antes de salvar no banco</li>
+    <li>Possui opção de sair do sistema</li>
+    <li>Permite cadastrar produtos</li>
+    <li>Permite consultar os produtos cadastrados</li>
+    <li>Registra automaticamente a data de entrada dos produtos</li>
 </ul>
 
 <hr>
@@ -40,59 +44,77 @@ A ideia é criar um sistema de controle de estoque de forma gradual, começando 
 <h2>Banco de Dados</h2>
 
 <p>
-O sistema utiliza um banco de dados chamado estoque_db.
+O banco utilizado no projeto se chama estoque_db.
 </p>
 
 <p>
-Atualmente ele possui duas tabelas principais:
+Atualmente ele possui três tabelas principais:
 </p>
 
 <h3>login_lvls</h3>
 
 <p>
-Responsável por armazenar os níveis de acesso disponíveis no sistema, definindo quais permissões cada usuário possui.
+Responsável por armazenar os níveis de acesso do sistema, definindo as permissões de cada usuário.
 </p>
 
 <h3>usuarios</h3>
 
 <p>
-Responsável por armazenar os usuários cadastrados, suas senhas criptografadas e o nível de acesso associado a cada conta.
+Responsável por armazenar os usuários cadastrados, suas senhas criptografadas e seus respectivos níveis de acesso.
+</p>
+
+<h3>produtos</h3>
+
+<p>
+Responsável por armazenar os produtos cadastrados no estoque.
 </p>
 
 <p>
-As duas tabelas são relacionadas pelo campo id_lvl, permitindo controlar as permissões de cada usuário dentro do sistema.
-</p>
-
-<hr>
-
-<h2>Estrutura do Projeto</h2>
-
-<p>
-Os arquivos foram organizados de forma simples para facilitar a manutenção e o entendimento do projeto.
+Campos da tabela:
 </p>
 
 <ul>
-    <li>Logar.php - tela de login</li>
-    <li>VerificarLogin.php - valida usuário e senha</li>
-    <li>Entrada.php - página principal após o login</li>
-    <li>ControleEntrada.php - proteção das páginas internas</li>
-    <li>Adicionarusuario.php - cadastro de novos usuários</li>
-    <li>gerenciamentousuario.php - gerenciamento dos usuários cadastrados</li>
-    <li>Cifrar.php - criptografia das senhas</li>
-    <li>linkagemdb.php - conexão com o banco de dados</li>
-    <li>Deslogar.php - encerramento da sessão</li>
+    <li>Código do produto</li>
+    <li>Nome do produto</li>
+    <li>Descrição</li>
+    <li>Preço</li>
+    <li>Quantidade</li>
+    <li>Data de entrada</li>
+    <li>Status ativo/inativo</li>
 </ul>
 
 <hr>
 
-<h2>Como executar</h2>
+<h2>Organização dos Arquivos</h2>
+
+<p>
+A estrutura do projeto foi organizada de forma simples, separando cada funcionalidade em arquivos específicos.
+</p>
+
+<ul>
+    <li>Logar.php - Tela de login</li>
+    <li>VerificarLogin.php - Validação do login</li>
+    <li>Entrada.php - Página principal após autenticação</li>
+    <li>ControleEntrada.php - Proteção das páginas</li>
+    <li>Adicionarusuario.php - Cadastro de usuários</li>
+    <li>gerenciamentousuario.php - Gerenciamento de usuários</li>
+    <li>CadastrarProdutos.php - Cadastro de produtos</li>
+    <li>ConsultarProdutos.php - Consulta de produtos cadastrados</li>
+    <li>Cifrar.php - Criptografia de senhas</li>
+    <li>linkagemdb.php - Conexão com banco de dados</li>
+    <li>Deslogar.php - Encerramento da sessão</li>
+</ul>
+
+<hr>
+
+<h2>Como executar o projeto</h2>
 
 <ol>
-    <li>Instale o XAMPP.</li>
-    <li>Inicie os serviços Apache e MySQL.</li>
-    <li>Importe o banco de dados estoque_db.</li>
-    <li>Coloque os arquivos do projeto dentro da pasta htdocs.</li>
-    <li>Acesse o sistema através do navegador utilizando o localhost.</li>
+    <li>Instalar o XAMPP</li>
+    <li>Iniciar o Apache e o MySQL</li>
+    <li>Importar o banco de dados estoque_db</li>
+    <li>Colocar os arquivos dentro da pasta htdocs</li>
+    <li>Acessar o sistema pelo navegador utilizando localhost</li>
 </ol>
 
 <hr>
@@ -102,21 +124,26 @@ Os arquivos foram organizados de forma simples para facilitar a manutenção e o
 <ul>
     <li>Adicionar CSS para melhorar a aparência do sistema</li>
     <li>Organizar melhor as telas</li>
-    <li>Criar o cadastro de produtos</li>
-    <li>Adicionar consulta de produtos em estoque</li>
-    <li>Registrar produtos que saíram do estoque com data, horário e quantidade</li>
-    <li>Implementar edição e exclusão de registros</li>
+    <li>Implementar edição de produtos</li>
+    <li>Implementar desativação de produtos</li>
+    <li>Criar registro de saída de produtos</li>
+    <li>Registrar data, horário e quantidade das saídas</li>
+    <li>Adicionar consulta de movimentações de estoque</li>
     <li>Melhorar as validações dos formulários</li>
-    <li>Tornar o sistema mais próximo de uma aplicação real</li>
+    <li>Deixar o sistema mais completo e próximo de uma aplicação real</li>
 </ul>
 
 <hr>
 
-<h2>Histórico de Versões</h2>
+<h2>Autor</h2>
 
 <p>
-Abaixo estão registradas as principais alterações realizadas durante o desenvolvimento do projeto.
+João Pedro Cortes da Silva Sedenho
 </p>
+
+<hr>
+
+<h2>Histórico de Versões</h2>
 
 <h3>v1.0</h3>
 
@@ -139,14 +166,14 @@ Abaixo estão registradas as principais alterações realizadas durante o desenv
     <li>Melhor organização dos arquivos do projeto</li>
 </ul>
 
-<p>
-Novas funcionalidades serão adicionadas nas próximas versões conforme o desenvolvimento do sistema avançar.
-</p>
+<h3>v1.2</h3>
 
-<hr>
-
-<h2>Autor</h2>
-
-<p>
-João Pedro Cortes da Silva Sedenho
-</p>
+<ul>
+    <li>Criação da tabela de produtos</li>
+    <li>Cadastro de produtos</li>
+    <li>Consulta de produtos em estoque</li>
+    <li>Controle de produtos ativos e inativos</li>
+    <li>Registro automático da data de entrada dos produtos</li>
+    <li>Formatação de data para o padrão brasileiro</li>
+    <li>Integração do módulo de produtos ao menu principal do sistema</li>
+</ul>
