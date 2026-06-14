@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14/06/2026 às 23:47
+-- Tempo de geração: 15/06/2026 às 01:16
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -45,6 +45,31 @@ INSERT INTO `login_lvls` (`id_lvl`, `lvl`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `movimentacoes_estoque`
+--
+
+CREATE TABLE `movimentacoes_estoque` (
+  `id_movimentacao` int(11) NOT NULL,
+  `id_produto` int(11) NOT NULL,
+  `tipo` varchar(10) NOT NULL,
+  `quantidade` int(11) NOT NULL,
+  `data_movimentacao` datetime NOT NULL DEFAULT current_timestamp(),
+  `usuario` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `movimentacoes_estoque`
+--
+
+INSERT INTO `movimentacoes_estoque` (`id_movimentacao`, `id_produto`, `tipo`, `quantidade`, `data_movimentacao`, `usuario`) VALUES
+(1, 1, 'saida', 2, '2026-06-14 19:58:56', 'Supreme_User'),
+(2, 2, 'saida', 1, '2026-06-14 19:59:14', 'Supreme_User'),
+(3, 1, 'entrada', 20, '2026-06-14 20:13:23', 'Supreme_User'),
+(4, 1, 'saida', 17, '2026-06-14 20:14:08', 'Supreme_User');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `produtos`
 --
 
@@ -64,8 +89,8 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id_produto`, `codigo_produto`, `nome_produto`, `descricao`, `preco`, `quantidade`, `data_entrada`, `ativo`) VALUES
-(1, '1238548', 'Óculos de sol ray-ban', 'óculos de sol da marca Ray-ban', 400.50, 20, '2026-06-14 16:22:25', 1),
-(2, '2165', 'óculos de sol', 'oculos de sol para sol', 180.00, 5, '2026-06-14 16:24:10', 1);
+(1, '1238548', 'Óculos de sol ray-ban', 'óculos de sol Ray-ban', 399.90, 4, '2026-06-14 16:22:25', 1),
+(2, '2165', 'óculos de sol', 'oculos de sol para sol', 180.00, 4, '2026-06-14 16:24:10', 1);
 
 -- --------------------------------------------------------
 
@@ -100,6 +125,13 @@ ALTER TABLE `login_lvls`
   ADD PRIMARY KEY (`id_lvl`);
 
 --
+-- Índices de tabela `movimentacoes_estoque`
+--
+ALTER TABLE `movimentacoes_estoque`
+  ADD PRIMARY KEY (`id_movimentacao`),
+  ADD KEY `id_produto` (`id_produto`);
+
+--
 -- Índices de tabela `produtos`
 --
 ALTER TABLE `produtos`
@@ -121,6 +153,12 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `login_lvls`
   MODIFY `id_lvl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `movimentacoes_estoque`
+--
+ALTER TABLE `movimentacoes_estoque`
+  MODIFY `id_movimentacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`

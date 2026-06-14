@@ -40,9 +40,13 @@ if(isset($_SESSION['msg'])){
                 $data_br = date("d/m/Y H:i:s", strtotime($data_entrada));
                 $preco_br = number_format($preco, 2, ",", ".");
                 $acoes = "<a href='EditarProduto.php?id=$id_produto'>Editar</a>";
+                $acoes .= "| <a href='SaidaEstoque.php?id=$id_produto'>Saída</a>";
+                $acoes .= "| <a href='EntradaEstoque.php?id=$id_produto'>Entrada</a>";
+
                 if($_SESSION['level'] == 0){
                     $acoes .= " | <a href='DesativarProduto.php?id=$id_produto'>Desativar</a>";
                 }
+                
                 echo"
                     <tr>
                         <td>$codigo</td>

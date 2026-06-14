@@ -23,6 +23,7 @@
             break;
     }
     echo "<a href='ConsultarProdutos.php'>Consultar Produtos</a></p>";
+    echo "<p><a href='HistoricoMovimentacao.php'>Histórico de Movimentações</a></p>";
 ?>
 <hr>
 
