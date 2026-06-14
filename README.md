@@ -1,7 +1,11 @@
 <h1>Sistema de Controle de Estoque</h1>
 
 <p>
-A ideia principal é criar um sistema de controle de estoque, começando pela parte de login, usuários e níveis de acesso. Ainda é uma primeira versão, mas pretendo continuar evoluindo o projeto conforme avanço
+Este projeto foi desenvolvido com o objetivo de praticar PHP, MySQL e conceitos de desenvolvimento web.
+</p>
+
+<p>
+A ideia é criar um sistema de controle de estoque de forma gradual, começando pela autenticação de usuários e controle de acesso, e adicionando novas funcionalidades conforme avanço nos estudos e ganho mais experiência com a linguagem.
 </p>
 
 <hr>
@@ -18,75 +22,77 @@ A ideia principal é criar um sistema de controle de estoque, começando pela pa
 
 <hr>
 
-<h2>O que o sistema já faz</h2>
+<h2>Funcionalidades atuais</h2>
 
 <ul>
-    <li>Conecta com o banco de dados</li>
-    <li>Possui tela de login</li>
-    <li>Trabalha com sessões</li>
-    <li>Controla níveis de acesso</li>
-    <li>Permite cadastrar usuários</li>
-    <li>Criptografa as senhas antes de salvar no banco</li>
-    <li>Possui opção de sair do sistema</li>
+    <li>Conexão com banco de dados</li>
+    <li>Sistema de login</li>
+    <li>Controle de sessões</li>
+    <li>Controle de níveis de acesso</li>
+    <li>Cadastro de usuários</li>
+    <li>Criptografia de senhas</li>
+    <li>Encerramento de sessão (logoff)</li>
+    <li>Gerenciamento de usuários</li>
 </ul>
 
 <hr>
 
-<h2>Banco de dados</h2>
+<h2>Banco de Dados</h2>
 
 <p>
-O banco utilizado no projeto se chama estoque_db
+O sistema utiliza um banco de dados chamado estoque_db.
 </p>
 
 <p>
-Até o momento, ele conta com duas tabelas principais:
+Atualmente ele possui duas tabelas principais:
 </p>
 
 <h3>login_lvls</h3>
 
 <p>
-Essa tabela guarda os níveis de acesso dos usuários. Nela ficam cadastrados os tipos de permissão, como administrador, operador e usuário comum
+Responsável por armazenar os níveis de acesso disponíveis no sistema, definindo quais permissões cada usuário possui.
 </p>
 
 <h3>usuarios</h3>
 
 <p>
-Essa tabela guarda os usuários cadastrados no sistema. Ela armazena o nome de usuário, a senha criptografada e o nível de acesso de cada conta
+Responsável por armazenar os usuários cadastrados, suas senhas criptografadas e o nível de acesso associado a cada conta.
 </p>
 
 <p>
-As duas tabelas se relacionam pelo campo id_lvl. Dessa forma, cada usuário fica ligado a um nível específico dentro do sistema
+As duas tabelas são relacionadas pelo campo id_lvl, permitindo controlar as permissões de cada usuário dentro do sistema.
 </p>
 
 <hr>
 
-<h2>Organização dos arquivos</h2>
+<h2>Estrutura do Projeto</h2>
 
 <p>
-A estrutura do projeto foi organizada de forma simples, separando os arquivos principais do sistema:
+Os arquivos foram organizados de forma simples para facilitar a manutenção e o entendimento do projeto.
 </p>
 
 <ul>
-    <li>Logar.php - tela de login do sistema</li>
-    <li>Entrada.php - página inicial após o login</li>
-    <li>ControleEntrada.php - protege as páginas contra acesso sem login</li>
-    <li>Adicionarusuario.php - adiciona novos usuários no banco</li>
-    <li>gerenciamentousuario.php - página para visualizar e gerenciar usuários</li>
-    <li>Cifrar.php - responsável pela criptografia das senhas</li>
-    <li>linkagemdb.php - arquivo de conexão com o banco de dados</li>
-    <li>Deslogar.php - encerra a sessão do usuário</li>
+    <li>Logar.php - tela de login</li>
+    <li>VerificarLogin.php - valida usuário e senha</li>
+    <li>Entrada.php - página principal após o login</li>
+    <li>ControleEntrada.php - proteção das páginas internas</li>
+    <li>Adicionarusuario.php - cadastro de novos usuários</li>
+    <li>gerenciamentousuario.php - gerenciamento dos usuários cadastrados</li>
+    <li>Cifrar.php - criptografia das senhas</li>
+    <li>linkagemdb.php - conexão com o banco de dados</li>
+    <li>Deslogar.php - encerramento da sessão</li>
 </ul>
 
 <hr>
 
-<h2>Como executar o projeto</h2>
+<h2>Como executar</h2>
 
 <ol>
-    <li>Instale o XAMPP</li>
-    <li>Inicie o Apache e o MySQL</li>
-    <li>Crie ou importe o banco de dados estoque_db</li>
-    <li>Coloque os arquivos do projeto dentro da pasta htdocs</li>
-    <li>Acesse o projeto pelo navegador usando o localhost</li>
+    <li>Instale o XAMPP.</li>
+    <li>Inicie os serviços Apache e MySQL.</li>
+    <li>Importe o banco de dados estoque_db.</li>
+    <li>Coloque os arquivos do projeto dentro da pasta htdocs.</li>
+    <li>Acesse o sistema através do navegador utilizando o localhost.</li>
 </ol>
 
 <hr>
@@ -97,13 +103,47 @@ A estrutura do projeto foi organizada de forma simples, separando os arquivos pr
     <li>Adicionar CSS para melhorar a aparência do sistema</li>
     <li>Organizar melhor as telas</li>
     <li>Criar o cadastro de produtos</li>
-    <li>Adicionar consulta de produtos no estoque</li>
-    <li>Registrar produtos que saíram do estoque, com data, horário e quantidade</li>
+    <li>Adicionar consulta de produtos em estoque</li>
+    <li>Registrar produtos que saíram do estoque com data, horário e quantidade</li>
     <li>Implementar edição e exclusão de registros</li>
     <li>Melhorar as validações dos formulários</li>
-    <li>Deixar o sistema mais completo e mais próximo de uma aplicação real</li>
+    <li>Tornar o sistema mais próximo de uma aplicação real</li>
 </ul>
 
+<hr>
+
+<h2>Histórico de Versões</h2>
+
+<p>
+Abaixo estão registradas as principais alterações realizadas durante o desenvolvimento do projeto.
+</p>
+
+<h3>v1.0</h3>
+
+<ul>
+    <li>Estrutura inicial do sistema</li>
+    <li>Conexão com banco de dados</li>
+    <li>Sistema de login</li>
+    <li>Cadastro de usuários</li>
+    <li>Controle de níveis de acesso</li>
+</ul>
+
+<h3>v1.1</h3>
+
+<ul>
+    <li>Correção do sistema de autenticação</li>
+    <li>Correção da criptografia de senhas</li>
+    <li>Ajuste das consultas SQL</li>
+    <li>Correção do gerenciamento de sessões</li>
+    <li>Correção do processo de logoff</li>
+    <li>Melhor organização dos arquivos do projeto</li>
+</ul>
+
+<p>
+Novas funcionalidades serão adicionadas nas próximas versões conforme o desenvolvimento do sistema avançar.
+</p>
+
+<hr>
 
 <h2>Autor</h2>
 
