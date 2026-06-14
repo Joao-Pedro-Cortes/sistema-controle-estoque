@@ -188,3 +188,18 @@ João Pedro Cortes da Silva Sedenho
     <li>Melhoria na consulta de produtos</li>
     <li>Proteção da quantidade de estoque contra alterações manuais</li>
 </ul>
+
+<h3>v1.4</h3>
+
+<ul>
+    <li>Implementação da entrada de estoque</li>
+    <li>Implementação da saída de estoque</li>
+    <li>Criação do histórico de movimentações</li>
+    <li>Registro automático de entradas e saídas de produtos</li>
+    <li>Registro do usuário responsável por cada movimentação</li>
+    <li>Registro automático da data e hora das movimentações</li>
+    <li>Desativação automática de produtos com estoque zerado</li>
+    <li>Reativação automática de produtos ao receber nova entrada de estoque</li>
+    <li>Separação entre cadastro de produtos e movimentação de estoque</li>
+    <li>Criação da página de consulta do histórico de movimentações</li>
+</ul>
