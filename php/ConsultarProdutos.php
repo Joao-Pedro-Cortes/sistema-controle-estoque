@@ -18,7 +18,7 @@ if(isset($_SESSION['msg'])){
 <body>
 
     <h1>Produtos em Estoque</h1>
-
+    
     <table border="1">
         <tr>
             <th>Código</th>
@@ -42,6 +42,9 @@ if(isset($_SESSION['msg'])){
                 $acoes = "<a href='EditarProduto.php?id=$id_produto'>Editar</a>";
                 $acoes .= "| <a href='SaidaEstoque.php?id=$id_produto'>Saída</a>";
                 $acoes .= "| <a href='EntradaEstoque.php?id=$id_produto'>Entrada</a>";
+                if($_SESSION['level'] == 0){
+                    $acoes .= "| <a href='ExcluirProduto.php?id=$id_produto'>Excluir</a>";
+                }       
 
                 if($_SESSION['level'] == 0){
                     $acoes .= " | <a href='DesativarProduto.php?id=$id_produto'>Desativar</a>";

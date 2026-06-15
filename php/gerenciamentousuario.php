@@ -16,8 +16,11 @@ $nivel = $_SESSION['level'];
     <h2>Adicionar Usuário</h2>
 
 <?php
-echo $_SESSION['msg'];
-$_SESSION['msg'] = "";
+
+if(isset($_SESSION['msg'])){
+    echo $_SESSION['msg'];
+    $_SESSION['msg'] = "";
+}
 
 switch($nivel)
 {
@@ -57,30 +60,34 @@ switch($nivel)
         <th>Username</th>
         <th>Nível</th>
         <th>ALT</th>
+        <th>Excluir</th>
     </tr>
 
 <?php
-$sql = "SELECT id_usuario, username, id_lvl, descricao 
-        FROM usuarios
-        INNER JOIN login_lvls ON usuarios.id_lvl = login_lvls.id_lvl
-        WHERE lvl>=?";
+$sql = "SELECT usuarios.id_usuario, usuarios.username, login_lvls.id_lvl, login_lvls.descricao FROM usuarios INNER JOIN login_lvls ON usuarios.id_lvl = login_lvls.id_lvl 
+        WHERE login_lvls.lvl >= ?";
 
 $stmt = mysqli_stmt_init($con);
 mysqli_stmt_prepare($stmt, $sql);
 mysqli_stmt_bind_param($stmt, "i", $nivel);
 mysqli_stmt_execute($stmt);
-mysqli_stmt_bind_result($stmt, $lvl1, $lvl2, $lvl3, $lvl4);
+mysqli_stmt_bind_result($stmt, $id_usuario, $username, $id_lvl, $descricao);
 
 while(mysqli_stmt_fetch($stmt)){
     echo "
         <tr>
-            <td>$lvl2</td>
-            <td>$lvl4</td>
-            <td><a href='users_alt.php?id=$lvl1'>ALT</a></td>
+            <td>$username</td>
+            <td>$descricao</td>
+            <td><a href='users_alt.php?id=$id_usuario'>ALT</a></td>
+            <td><a href='ExcluirUsuario.php?id=$id_usuario'>Excluir</a></td>
         </tr>";
 }
 ?>
 
 </table>
+<hr>
+
+<p><a href="Entrada.php">Voltar</a></p>
+<p><a href="Deslogar.php">Sair</a></p>
 </body>
 </html>

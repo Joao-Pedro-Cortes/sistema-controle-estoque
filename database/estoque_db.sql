@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/06/2026 às 01:16
+-- Tempo de geração: 15/06/2026 às 23:05
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -62,10 +62,13 @@ CREATE TABLE `movimentacoes_estoque` (
 --
 
 INSERT INTO `movimentacoes_estoque` (`id_movimentacao`, `id_produto`, `tipo`, `quantidade`, `data_movimentacao`, `usuario`) VALUES
-(1, 1, 'saida', 2, '2026-06-14 19:58:56', 'Supreme_User'),
-(2, 2, 'saida', 1, '2026-06-14 19:59:14', 'Supreme_User'),
-(3, 1, 'entrada', 20, '2026-06-14 20:13:23', 'Supreme_User'),
-(4, 1, 'saida', 17, '2026-06-14 20:14:08', 'Supreme_User');
+(9, 6, 'saida', 2, '2026-06-15 17:37:33', 'Supreme_User'),
+(10, 6, 'saida', 8, '2026-06-15 17:37:39', 'Supreme_User'),
+(11, 6, 'entrada', 16, '2026-06-15 17:37:53', 'Supreme_User'),
+(12, 5, 'saida', 5, '2026-06-15 17:38:25', 'Supreme_User'),
+(13, 5, 'entrada', 5, '2026-06-15 17:46:10', 'Supreme_User'),
+(14, 5, 'saida', 5, '2026-06-15 17:47:39', 'Supreme_User'),
+(15, 5, 'entrada', 2, '2026-06-15 17:50:14', 'Supreme_User');
 
 -- --------------------------------------------------------
 
@@ -89,8 +92,8 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id_produto`, `codigo_produto`, `nome_produto`, `descricao`, `preco`, `quantidade`, `data_entrada`, `ativo`) VALUES
-(1, '1238548', 'Óculos de sol ray-ban', 'óculos de sol Ray-ban', 399.90, 4, '2026-06-14 16:22:25', 1),
-(2, '2165', 'óculos de sol', 'oculos de sol para sol', 180.00, 4, '2026-06-14 16:24:10', 1);
+(5, '1238548', 'Óculos de sol ray-ban', 'Oculos da marca ray-ban', 449.99, 2, '2026-06-15 17:36:47', 1),
+(6, '1238549', 'óculos de sol', 'oculos de sol sem marca definida', 180.00, 16, '2026-06-15 17:37:16', 1);
 
 -- --------------------------------------------------------
 
@@ -112,7 +115,7 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id_usuario`, `username`, `senha`, `id_lvl`) VALUES
 (1, 'Supreme_User', 'c3d8e393ef92aba852d0032d6de9f07fb893d8185f066d9d9baa5c9d5802853f3bfaba1bfcfb8eeb18f0671d4fd11ead83b1b90d889cc1e249b559a53d05c6c5', 1),
 (2, 'Teste123', '3d109b80e802df95f65b10abef5eeb315f11acfc781c356cb6692790648a59fbe4beb68b61a23a4652d9fab6afd6c10c743f0afc0aaf19e8669a868177a85ac3', 2),
-(3, 'Cocão', '85a63afb1da3d22b3d83935753a1e1e7881bc1ed555fd6efb014876b829d4890815e6aa0d208a67842a8d9caec7a30f22075638e026c53250b74734c8eb046eb', 3);
+(4, 'Cocão', '85a63afb1da3d22b3d83935753a1e1e7881bc1ed555fd6efb014876b829d4890815e6aa0d208a67842a8d9caec7a30f22075638e026c53250b74734c8eb046eb', 3);
 
 --
 -- Índices para tabelas despejadas
@@ -158,19 +161,19 @@ ALTER TABLE `login_lvls`
 -- AUTO_INCREMENT de tabela `movimentacoes_estoque`
 --
 ALTER TABLE `movimentacoes_estoque`
-  MODIFY `id_movimentacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_movimentacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

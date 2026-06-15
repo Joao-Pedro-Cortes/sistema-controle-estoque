@@ -203,3 +203,17 @@ João Pedro Cortes da Silva Sedenho
     <li>Separação entre cadastro de produtos e movimentação de estoque</li>
     <li>Criação da página de consulta do histórico de movimentações</li>
 </ul>
+
+<h3>v1.5</h3>
+
+<ul>
+    <li>Correção de erros e avisos em telas do sistema</li>
+    <li>Melhorias no gerenciamento de usuários</li>
+    <li>Implementação de alteração de usuários</li>
+    <li>Implementação de exclusão de usuários com controle de permissão</li>
+    <li>Implementação de exclusão de produtos apenas para Administrador++</li>
+    <li>Melhorias nos produtos desativados</li>
+    <li>Opção de adicionar estoque em produtos desativados</li>
+    <li>Reativação de produtos desativados</li>
+    <li>Validação no cadastro de produtos para evitar campos vazios e valores inválidos</li>
+</ul>

@@ -58,7 +58,10 @@ while(mysqli_stmt_fetch($stmt)){
             <td>R$ $preco_br</td>
             <td>$quantidade</td>
             <td>$data_br</td>
-            <td><a href='ReativarProduto.php?id=$id_produto'>Reativar</a></td>
+            <td>
+                <a href='EntradaEstoque.php?id=$id_produto'>Adicionar Estoque</a> |
+                <a href='ReativarProduto.php?id=$id_produto'>Reativar</a>
+            </td>
         </tr>
     ";
 }
