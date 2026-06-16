@@ -1,0 +1,78 @@
+body{
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    padding: 30px;
+}
+
+.produtos-container{
+    max-width: 500px;
+    margin: 0 auto;
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.produtos-container h1{
+    margin-bottom: 25px;
+}
+
+.produtos-container p{
+    margin-bottom: 15px;
+}
+
+.produtos-container input,
+.produtos-container textarea{
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.produtos-container textarea{
+    height: 90px;
+    resize: vertical;
+}
+
+.produtos-container input[type="submit"]{
+    width: auto;
+    padding: 10px 20px;
+    background-color: #198754;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.produtos-container input[type="submit"]:hover{
+    background-color: #157347;
+}
+
+.botao-voltar{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0b5ed7;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.botao-voltar:hover{
+    background-color: #084298;
+    text-decoration: none;
+}
+
+.botao-salvar{
+    background-color: #198754 !important;
+    color: white;
+}
+
+.botao-salvar:hover{
+    background-color: #157347 !important;
+}

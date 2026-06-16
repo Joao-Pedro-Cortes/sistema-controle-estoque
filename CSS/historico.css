@@ -1,0 +1,61 @@
+body{
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    padding: 30px;
+}
+
+.historico-container{
+    max-width: 1300px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.historico-container h1{
+    margin-bottom: 30px;
+}
+
+.historico-tabelas{
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.bloco{
+    flex: 1;
+}
+
+.bloco h2{
+    margin-bottom: 15px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td{
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th{
+    background-color: #e6e6e6;
+}
+
+.botao-voltar{
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 20px;
+    background-color: #0b5ed7;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.botao-voltar:hover{
+    background-color: #084298;
+}

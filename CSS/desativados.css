@@ -1,0 +1,107 @@
+body{
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    padding: 30px;
+}
+
+.desativados-container{
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.desativados-container h1{
+    margin-bottom: 25px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td{
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.preco{
+    white-space: nowrap;
+}
+
+th{
+    background-color: #e6e6e6;
+}
+
+.acoes{
+    white-space: nowrap;
+    min-width: 180px;
+}
+
+a{
+    color: #0b5ed7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.botoes-final{
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.botao-link{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0b5ed7;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.botao-link:hover{
+    background-color: #084298;
+    text-decoration: none;
+}
+
+hr{
+    margin: 25px 0;
+}
+
+.acoes{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.acao-estoque{
+    background-color: #198754;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.acao-estoque:hover{
+    background-color: #157347;
+}
+
+.acao-reativar{
+    background-color: #0d6efd;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.acao-reativar:hover{
+    background-color: #084298;
+}

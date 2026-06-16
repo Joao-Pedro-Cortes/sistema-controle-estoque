@@ -91,11 +91,14 @@ if(isset($_POST['btn'])){
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/produtos.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Produtos</title>
 </head>
 <body>
+    <div class="produtos-container">
     <h1>Cadastro de Produtos</h1>
 
 <?php
@@ -115,6 +118,7 @@ if(isset($_SESSION['msg'])){
         <p><input type="submit" name="btn" value="Cadastrar"></p>
     </form>
     <hr>
-    <p><a href="Entrada.php">Voltar</a></p>
+    <a class="botao-voltar" href="Entrada.php">Voltar</a>
+</div>
 </body>
 </html>

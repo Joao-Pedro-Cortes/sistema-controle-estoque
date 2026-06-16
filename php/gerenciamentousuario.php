@@ -10,8 +10,11 @@ $nivel = $_SESSION['level'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciamento de Usuários</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/usuarios.css">
 </head>
 <body>
+    <div class="usuarios-container">
     <h1>Gerenciamento de Usuários</h1>
     <h2>Adicionar Usuário</h2>
 
@@ -87,7 +90,11 @@ while(mysqli_stmt_fetch($stmt)){
 </table>
 <hr>
 
-<p><a href="Entrada.php">Voltar</a></p>
-<p><a href="Deslogar.php">Sair</a></p>
+<div class="botoes-final">
+    <a class="botao-link" href="Entrada.php">Voltar</a>
+    <a class="botao-link" href="Deslogar.php">Sair</a>
+</div>
+</div>
+</div>
 </body>
 </html>

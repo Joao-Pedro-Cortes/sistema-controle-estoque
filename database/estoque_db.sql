@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/06/2026 às 23:05
+-- Tempo de geração: 16/06/2026 às 03:57
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -68,7 +68,9 @@ INSERT INTO `movimentacoes_estoque` (`id_movimentacao`, `id_produto`, `tipo`, `q
 (12, 5, 'saida', 5, '2026-06-15 17:38:25', 'Supreme_User'),
 (13, 5, 'entrada', 5, '2026-06-15 17:46:10', 'Supreme_User'),
 (14, 5, 'saida', 5, '2026-06-15 17:47:39', 'Supreme_User'),
-(15, 5, 'entrada', 2, '2026-06-15 17:50:14', 'Supreme_User');
+(15, 5, 'entrada', 2, '2026-06-15 17:50:14', 'Supreme_User'),
+(16, 7, 'saida', 80, '2026-06-15 19:45:48', 'Supreme_User'),
+(17, 7, 'entrada', 30, '2026-06-15 19:46:09', 'Supreme_User');
 
 -- --------------------------------------------------------
 
@@ -93,7 +95,8 @@ CREATE TABLE `produtos` (
 
 INSERT INTO `produtos` (`id_produto`, `codigo_produto`, `nome_produto`, `descricao`, `preco`, `quantidade`, `data_entrada`, `ativo`) VALUES
 (5, '1238548', 'Óculos de sol ray-ban', 'Oculos da marca ray-ban', 449.99, 2, '2026-06-15 17:36:47', 1),
-(6, '1238549', 'óculos de sol', 'oculos de sol sem marca definida', 180.00, 16, '2026-06-15 17:37:16', 1);
+(6, '1238549', 'óculos de sol', 'oculos de sol sem marca definida', 180.00, 16, '2026-06-15 17:37:16', 1),
+(7, '4662206', 'Melão', 'Fruta melão', 15.00, 30, '2026-06-15 19:26:10', 1);
 
 -- --------------------------------------------------------
 
@@ -114,8 +117,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `username`, `senha`, `id_lvl`) VALUES
 (1, 'Supreme_User', 'c3d8e393ef92aba852d0032d6de9f07fb893d8185f066d9d9baa5c9d5802853f3bfaba1bfcfb8eeb18f0671d4fd11ead83b1b90d889cc1e249b559a53d05c6c5', 1),
-(2, 'Teste123', '3d109b80e802df95f65b10abef5eeb315f11acfc781c356cb6692790648a59fbe4beb68b61a23a4652d9fab6afd6c10c743f0afc0aaf19e8669a868177a85ac3', 2),
-(4, 'Cocão', '85a63afb1da3d22b3d83935753a1e1e7881bc1ed555fd6efb014876b829d4890815e6aa0d208a67842a8d9caec7a30f22075638e026c53250b74734c8eb046eb', 3);
+(2, 'Teste123', '3d109b80e802df95f65b10abef5eeb315f11acfc781c356cb6692790648a59fbe4beb68b61a23a4652d9fab6afd6c10c743f0afc0aaf19e8669a868177a85ac3', 2);
 
 --
 -- Índices para tabelas despejadas
@@ -161,19 +163,19 @@ ALTER TABLE `login_lvls`
 -- AUTO_INCREMENT de tabela `movimentacoes_estoque`
 --
 ALTER TABLE `movimentacoes_estoque`
-  MODIFY `id_movimentacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_movimentacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
