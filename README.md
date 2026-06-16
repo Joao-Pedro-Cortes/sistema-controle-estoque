@@ -16,6 +16,7 @@ Durante o desenvolvimento, busco aplicar boas práticas de organização de cód
     <li>PHP</li>
     <li>MySQL / MariaDB</li>
     <li>HTML</li>
+    <li>CSS</li>
     <li>XAMPP</li>
     <li>phpMyAdmin</li>
     <li>Git</li>
@@ -36,7 +37,19 @@ Durante o desenvolvimento, busco aplicar boas práticas de organização de cód
     <li>Possui opção de sair do sistema</li>
     <li>Permite cadastrar produtos</li>
     <li>Permite consultar os produtos cadastrados</li>
+    <li>Permite editar produtos</li>
+    <li>Permite excluir produtos</li>
+    <li>Permite desativar produtos</li>
+    <li>Permite reativar produtos</li>
     <li>Registra automaticamente a data de entrada dos produtos</li>
+    <li>Permite entrada de estoque</li>
+    <li>Permite saída de estoque</li>
+    <li>Registra histórico de movimentações</li>
+    <li>Registra automaticamente usuário, data e hora das movimentações</li>
+    <li>Desativa automaticamente produtos sem estoque</li>
+    <li>Reativa automaticamente produtos ao receber nova entrada de estoque</li>
+    <li>Possui tratamento de permissões por nível de acesso</li>
+    <li>Possui interface gráfica com CSS</li>
 </ul>
 
 <hr>
@@ -48,7 +61,7 @@ O banco utilizado no projeto se chama estoque_db.
 </p>
 
 <p>
-Atualmente ele possui três tabelas principais:
+Atualmente ele possui quatro tabelas principais:
 </p>
 
 <h3>login_lvls</h3>
@@ -69,8 +82,14 @@ Responsável por armazenar os usuários cadastrados, suas senhas criptografadas 
 Responsável por armazenar os produtos cadastrados no estoque.
 </p>
 
+<h3>movimentacoes_estoque</h3>
+
 <p>
-Campos da tabela:
+Responsável por armazenar todas as entradas e saídas realizadas no sistema.
+</p>
+
+<p>
+Campos da tabela produtos:
 </p>
 
 <ul>
@@ -100,6 +119,11 @@ A estrutura do projeto foi organizada de forma simples, separando cada funcional
     <li>gerenciamentousuario.php - Gerenciamento de usuários</li>
     <li>CadastrarProdutos.php - Cadastro de produtos</li>
     <li>ConsultarProdutos.php - Consulta de produtos cadastrados</li>
+    <li>ProdutosDesativados.php - Consulta de produtos desativados</li>
+    <li>HistoricoMovimentacao.php - Histórico de movimentações</li>
+    <li>EntradaEstoque.php - Entrada de produtos</li>
+    <li>SaidaEstoque.php - Saída de produtos</li>
+    <li>EditarProduto.php - Alteração de produtos</li>
     <li>Cifrar.php - Criptografia de senhas</li>
     <li>linkagemdb.php - Conexão com banco de dados</li>
     <li>Deslogar.php - Encerramento da sessão</li>
@@ -122,15 +146,13 @@ A estrutura do projeto foi organizada de forma simples, separando cada funcional
 <h2>Próximas melhorias</h2>
 
 <ul>
-    <li>Adicionar CSS para melhorar a aparência do sistema</li>
-    <li>Organizar melhor as telas</li>
-    <li>Implementar edição de produtos</li>
-    <li>Implementar desativação de produtos</li>
-    <li>Criar registro de saída de produtos</li>
-    <li>Registrar data, horário e quantidade das saídas</li>
-    <li>Adicionar consulta de movimentações de estoque</li>
-    <li>Melhorar as validações dos formulários</li>
-    <li>Deixar o sistema mais completo e próximo de uma aplicação real</li>
+    <li>Implementar pesquisa de produtos</li>
+    <li>Criar dashboard com indicadores do estoque</li>
+    <li>Implementar filtros de pesquisa</li>
+    <li>Melhorar os relatórios de movimentação</li>
+    <li>Adicionar paginação nas consultas</li>
+    <li>Melhorar a responsividade das telas</li>
+    <li>Publicar o sistema online</li>
 </ul>
 
 <hr>
@@ -216,4 +238,21 @@ João Pedro Cortes da Silva Sedenho
     <li>Opção de adicionar estoque em produtos desativados</li>
     <li>Reativação de produtos desativados</li>
     <li>Validação no cadastro de produtos para evitar campos vazios e valores inválidos</li>
+</ul>
+
+<h3>v1.6</h3>
+
+<ul>
+    <li>Implementação de CSS no sistema</li>
+    <li>Reformulação da tela de Login</li>
+    <li>Reformulação do menu principal</li>
+    <li>Reformulação da tela de Gerenciamento de Usuários</li>
+    <li>Reformulação da tela de Cadastro de Produtos</li>
+    <li>Reformulação da tela de Edição de Produtos</li>
+    <li>Reformulação da tela de Entrada de Estoque</li>
+    <li>Reformulação da tela de Saída de Estoque</li>
+    <li>Reformulação da tela de Produtos Desativados</li>
+    <li>Reformulação da tela de Histórico de Movimentações</li>
+    <li>Padronização visual de todas as páginas do sistema</li>
+    <li>Melhorias na navegação e usabilidade</li>
 </ul>
